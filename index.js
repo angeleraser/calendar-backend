@@ -3,8 +3,7 @@ const express = require("express"),
 const { databaseConnection } = require("./database/database-config");
 require("dotenv").config(); //
 // Crear el servidor de Express
-const app = express(),
-  port = process.env.PORT;
+const app = express();
 
 // Base de datos
 databaseConnection();
@@ -24,6 +23,6 @@ app.use("/api/auth", require("./routes/auth"));
 app.use("/api/events", require("./routes/events"));
 
 // Escuchar peticiones 
-app.listen(port, () => {
-  console.log("Server running on port " + port);
+app.listen(process.env.PORT, () => {
+  console.log("Server running on process.env.PORT" + process.env.PORT);
 });
