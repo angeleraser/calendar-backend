@@ -1,5 +1,5 @@
 ### Register user
-POST  https://mern-calendar-angeleraser.herokuapp.com/api/auth
+POST  https://mern-calendar-angeleraser.herokuapp.com/api/auth/register
 Content-Type: application/json
 
 {
@@ -18,6 +18,6 @@ Content-Type: application/json
 }
 ### Renew Token
 GET https://mern-calendar-angeleraser.herokuapp.com/api/auth/renew-token
-x-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI1Zjk5ZDM3MGQ1MmU2YzFiYTBhYjVlYjkiLCJuYW1lIjoiQW5nZWwiLCJpYXQiOjE2MDM5MTY2NTcsImV4cCI6MTYwMzkyMzg1N30.HuzLxXNtBMpmbU3kotORZm3pdOhY8jtrXIX-pb9uDoo
+x-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI1ZjlhZWQwMzI4MjMwOTAzMWNiMWZiNTUiLCJuYW1lIjoiUGVkcm9zZXRlIiwiaWF0IjoxNjA0MDAwMDEwLCJleHAiOjE2MDQwMDcyMTB9.KHXsyPFjNU_vnbYsughdZZxQB6vBfWxBi-fy_tGkiCo
 Content-Type: application/json
 

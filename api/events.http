@@ -1,21 +1,21 @@
 ### Obtener eventos
-GET http://localhost:4000/api/events HTTP/1.1
-x-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI1ZjlhZWQwMzI4MjMwOTAzMWNiMWZiNTUiLCJuYW1lIjoiUGVkcm9zZXRlIiwiaWF0IjoxNjAzOTg4ODczLCJleHAiOjE2MDM5OTYwNzN9.pG4Edh3xUpna1RpCpMdyejs-IJ4J-FLw9nh1Pq7k1D0
+GET https://mern-calendar-angeleraser.herokuapp.com/api/events HTTP/1.1
+x-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI1ZjlhZWQwMzI4MjMwOTAzMWNiMWZiNTUiLCJuYW1lIjoiUGVkcm9zZXRlIiwiaWF0IjoxNjA0MDAwMTAxLCJleHAiOjE2MDQwMDczMDF9.JQRZthLBUdkWCtFhvitgZd9jGspZtuTfSegdpGZbOO8
 Content-Type: application/json
 
 ### Crear un nuevo evento
-POST  http://localhost:4000/api/events HTTP/1.1
-x-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI1ZjlhZWQwMzI4MjMwOTAzMWNiMWZiNTUiLCJuYW1lIjoiUGVkcm9zZXRlIiwiaWF0IjoxNjAzOTg4ODczLCJleHAiOjE2MDM5OTYwNzN9.pG4Edh3xUpna1RpCpMdyejs-IJ4J-FLw9nh1Pq7k1D0
+POST  https://mern-calendar-angeleraser.herokuapp.com/api/events HTTP/1.1
+x-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI1ZjlhZWQwMzI4MjMwOTAzMWNiMWZiNTUiLCJuYW1lIjoiUGVkcm9zZXRlIiwiaWF0IjoxNjA0MDAwMTAxLCJleHAiOjE2MDQwMDczMDF9.JQRZthLBUdkWCtFhvitgZd9jGspZtuTfSegdpGZbOO8
 Content-Type: application/json
 
 {
-    "title":"Learn Pedrosete soy pedrosete otravex",
+    "title":"Learn Pedrosete olololol",
     "start":4000000000,
     "end":5000000000
 }
 
 ### Acualizar evento
-PUT http://localhost:4000/api/events/5f9acc5f9112e005a84cff94 HTTP/1.1
+PUT https://mern-calendar-angeleraser.herokuapp.com/api/events/5f9acc5f9112e005a84cff94 HTTP/1.1
 x-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI1ZjlhZWQwMzI4MjMwOTAzMWNiMWZiNTUiLCJuYW1lIjoiUGVkcm9zZXRlIiwiaWF0IjoxNjAzOTg4NzM5LCJleHAiOjE2MDM5OTU5Mzl9.PHP87C1t02ZKxZC33iNrp5Pwp_aUsis3ER9DF2Vec_I
 Content-Type: application/json
 
@@ -26,6 +26,6 @@ Content-Type: application/json
 }
 
 ### Borrar evento
-DELETE  http://localhost:4000/api/events/5f9aee9edb9d302e84c0e3d2 HTTP/1.1
-x-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI1ZjlhZWQwMzI4MjMwOTAzMWNiMWZiNTUiLCJuYW1lIjoiUGVkcm9zZXRlIiwiaWF0IjoxNjAzOTg4ODczLCJleHAiOjE2MDM5OTYwNzN9.pG4Edh3xUpna1RpCpMdyejs-IJ4J-FLw9nh1Pq7k1D0
+DELETE  https://mern-calendar-angeleraser.herokuapp.com/api/events/5f9aed23282309031cb1fb56 HTTP/1.1
+x-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI1ZjlhZWQwMzI4MjMwOTAzMWNiMWZiNTUiLCJuYW1lIjoiUGVkcm9zZXRlIiwiaWF0IjoxNjA0MDAwMTAxLCJleHAiOjE2MDQwMDczMDF9.JQRZthLBUdkWCtFhvitgZd9jGspZtuTfSegdpGZbOO8
 Content-Type: application/json
