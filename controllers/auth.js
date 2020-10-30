@@ -16,7 +16,7 @@ const register = async (req, resp = response) => {
       return clientError(resp).status(401).body({ msg: "El correo ya existe" });
     } else {
       // Crea un nuevo usuario y lo guarda en la base de datos
-      user = new User(req.body);
+      user = new User(req.body); /* { name, email, password } */
       // Encriptar password antes de guardar el usuario
       const salt = bcrypt.genSaltSync();
       user.password = bcrypt.hashSync(password, salt);
