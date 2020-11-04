@@ -9,7 +9,7 @@ const mongoose = require("mongoose"),
       console.log("Database online...");
     } catch (error) {
       console.log(error);
-      throw new Error("Error al inicializar base de datos");
+      throw new Error("Error initializing database.");
     }
   };
 

@@ -12,12 +12,11 @@ router.post(
   "/register",
   [
     // middlewares
-    check("name", "El nombre es obligatorio").not().isEmpty(),
-    check(
-      "password",
-      "El password debe ser de al menos 6 caracteres"
-    ).isLength({ min: 6 }),
-    check("email", "El email es obligatorio").isEmail(),
+    check("name", "Name is required.").not().isEmpty(),
+    check("password", "Password should be at least six characters.").isLength({
+      min: 6,
+    }),
+    check("email", "Email is required").isEmail(),
     fieldsValidator,
   ],
   register
@@ -27,11 +26,10 @@ router.post(
   "/",
   [
     // middlewares
-    check(
-      "password",
-      "El password debe ser de al menos 6 caracteres"
-    ).isLength({ min: 6 }),
-    check("email", "El email es obligatorio").isEmail(),
+    check("password", "Password should be at least six characters ").isLength({
+      min: 6,
+    }),
+    check("email", "Email is required").isEmail(),
     fieldsValidator,
   ],
   loginUser

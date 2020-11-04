@@ -13,7 +13,9 @@ const register = async (req, resp = response) => {
     const { email, password } = req.body;
     let user = await User.findOne({ email }); // para validar si existe o no un usuario con el mismo correo
     if (user) {
-      return clientError(resp).status(401).body({ msg: "El correo ya existe" });
+      return clientError(resp)
+        .status(401)
+        .body({ msg: "The email is already used." });
     } else {
       // Crea un nuevo usuario y lo guarda en la base de datos
       user = new User(req.body); /* { name, email, password } */
@@ -29,7 +31,7 @@ const register = async (req, resp = response) => {
     }
   } catch (error) {
     return serverError(resp).status(500).body({
-      msg: "Hable con el administrador...",
+      msg: "An error has ocurred, please contact with the admin.",
     });
   }
 };
@@ -41,14 +43,14 @@ const loginUser = async (req, resp = response) => {
     const user = await User.findOne({ email });
     if (!user) {
       return clientError(resp).status(401).body({
-        msg: "El usuario no existe con ese email",
+        msg: "There is not user with this email.",
       });
     } else {
       // Confirmar los passwords
       const validPassword = bcrypt.compareSync(password, user.password); //compara el password introducido en el formularion con el de la base de datos
       if (!validPassword) {
         return clientError(resp).status(400).body({
-          msg: "Password incorrecto",
+          msg: "Wrong password, try again.",
         });
       } else {
         // Generar JWT
@@ -62,7 +64,7 @@ const loginUser = async (req, resp = response) => {
     }
   } catch (error) {
     return serverError(resp).status(500).body({
-      msg: "Hable con el administrador...",
+      msg: "An error has occurred, please contact with the admin.",
     });
   }
 };

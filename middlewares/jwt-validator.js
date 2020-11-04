@@ -6,7 +6,7 @@ const { response } = require("express"),
     if (!token) {
       return res.status(401).json({
         ok: false,
-        msg: "No hay token en la peticion...",
+        msg: "There is not token in the request.",
       });
     } else {
       //validar el token si existe
@@ -17,7 +17,7 @@ const { response } = require("express"),
       } catch (error) {
         return res.status(401).json({
           ok: false,
-          msg: "Token no valido",
+          msg: "Invalid token",
         });
       }
     }

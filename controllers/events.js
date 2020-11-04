@@ -15,7 +15,7 @@ const getEvents = async (_, resp = response) => {
     });
   } catch (error) {
     return serverError(resp).status(500, {
-      msg: "Hable con el administrador...",
+      msg: "An error has occurred, please contact with the admin.",
     });
   }
 };
@@ -32,7 +32,7 @@ const createNewEvent = async (req, resp = response) => {
     });
   } catch (error) {
     return serverError(resp).status(500).body({
-      msg: "Hable con el administrador...",
+      msg: "An error has occurred, please contact with the admin.",
     });
   }
 };
@@ -45,7 +45,7 @@ const updateEvent = async (req, resp = response) => {
     const eventInDatabase = await EventSchema.findById(eventID);
     if (!eventInDatabase) {
       return clientError(resp).status(404).body({
-        msg: "El evento no existe",
+        msg: "The event does not exist.",
       });
     }
     // 2 - Comparar el usuario que creo el evento con quien lo quiere editar
@@ -54,7 +54,7 @@ const updateEvent = async (req, resp = response) => {
     if (userEventID !== userReqID) {
       return clientError(resp).status(404).body({
         // No autorizado
-        msg: "No tiene privilegios para editar este evento",
+        msg: "You don't have privileges to edit this event.",
       });
     } else {
       const newEvent = {
@@ -71,7 +71,7 @@ const updateEvent = async (req, resp = response) => {
     }
   } catch (error) {
     return serverError(resp).status(500).body({
-      msg: "Hable con el administrador...",
+      msg: "An error has occurred, please contact with the admin.",
     });
   }
 };
@@ -84,7 +84,7 @@ const deleteEvent = async (req, resp = response) => {
     const eventInDatabase = await EventSchema.findById(eventID);
     if (!eventInDatabase) {
       return clientError(resp).status(404).body({
-        msg: "El evento no existe",
+        msg: "The event does not exist.",
       });
     }
     // 2 - Comparar el usuario que creo el evento con quien lo quiere borrar
@@ -92,7 +92,7 @@ const deleteEvent = async (req, resp = response) => {
       userReqID = req.uid; // viene del token
     if (userEventID !== userReqID) {
       return clientError(resp).status(404).body({
-        msg: "No tiene privilegios para editar este evento",
+        msg: "You don't have privileges to edit this event.",
       });
     } else {
       const deletedEvent = await EventSchema.findByIdAndRemove(eventID, {
@@ -104,7 +104,7 @@ const deleteEvent = async (req, resp = response) => {
     }
   } catch (error) {
     return serverError(resp).status(500).body({
-      msg: "Error en el servidor, por favor contacte con un administrador",
+      msg: "An error has occurred, please contact with the admin.",
     });
   }
 };
